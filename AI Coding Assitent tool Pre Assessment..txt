@@ -1,0 +1,110 @@
+// Initialize the game board as a 3x3 grid with all cells set to empty (' ').
+
+// Display the game board to the player.
+char board[3][3];
+void initializeBoard() {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            board[i][j] = ' ';
+        }
+    }
+}
+
+
+//Define a function to print the board:
+    - For each row in the board, print the values separated by '|' and rows separated by new lines to draw it .7
+
+void printBoard() {
+    cout << "-------------" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "| ";
+        for (int j = 0; j < 3; j++) {
+            cout << board[i][j] << " | ";
+        }
+        cout << endl;
+        cout << "-------------" << endl;
+    }
+}
+
+// Define a function to check for a winner:
+    - Check all rows, columns, and both diagonals for three of the same marks (either 'X' or 'O').
+
+
+bool checkWinner(char player) {
+    // Check rows and columns
+    for (int i = 0; i < 3; i++) {
+      use If conditions to check for  player winner in each row.
+      use if to check against hte diagonals
+    }
+
+
+//  Define a function to check if the board is full (draw):
+    - If all cells are filled with PLayer'X' or  AI'O', return True (indicating a draw).
+
+bool isBoardFull() {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+
+
+     Define the player's move: Prompt the user to enter a position (1-9) on the grid for their move.
+    - Convert the position to row and column and update the board with the player's mark.
+
+void playerMove() {
+    int move;
+    int row, col;
+
+    while (true) {
+        cout << "Enter your move (1-9): ";
+        cin >> move;
+ Convert to 0-indexed
+        move--;  
+move untill the space filled.
+}
+
+7. Define the AI's move:
+    - AI selects a random available spot on the board for its move.
+    - Update the board with the AI's mark.
+
+void AIMove() {
+    int move;
+    int row, col;
+
+    while (true) {
+        cout << "Enter AI move (1-9): ";
+        cin >> move;
+ Convert to 0-indexed
+        move--;  
+
+
+now run the  Game loop:
+    - Display the board.
+    - Player's turn:
+        - Get player input for the next move.
+        - Update the board.
+        - Check for a winner or draw.
+           {checkWinner(Player)} // call this function.
+           {isBoardFuull()} // call this function to chck the board state.
+    - AI's turn:
+        - AI makes a random move.
+        - Update the board.
+        - Check for a winner or draw.
+    
+            {checkWinnerAI// call this function for AI Turn.
+           {isBoardFuull()} // call this function to chck the board state.
+
+after that  Check for the end condition:
+    - If a player wins, print the winner and end the game.
+{printBoard()} // call print board function to there.
+    - If the board is full and no winner, print "It's a draw".
+
+
+Repeat the loop until the game Over.
